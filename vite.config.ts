@@ -20,4 +20,15 @@ export default defineConfig({
       '@': resolve('src')
     }
   },
+  css: {
+    // css 预处理器
+    preprocessorOptions: {
+      // provide global variables
+      scss: {
+        additionalData: `
+          @import "@/styles/mixins.scss";
+        `
+      }
+    }
+  }
 })
