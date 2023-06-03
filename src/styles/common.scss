@@ -4,10 +4,10 @@
 
 @mixin module {
   padding: 10px;
-  position: absolute;
+  position: absolute !important;
   top: 60px;
-  width: 400px;
-  height: 700px;
+  width: 400px !important;
+  height: 700px !important;
   background: rgba(0, 21, 62, 0.70);
   color: #FFF;
   z-index: 12;
