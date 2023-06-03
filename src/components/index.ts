@@ -1,7 +1,9 @@
 import { App } from 'vue'
+import MapChart from './MapChart'
 import SvgIcon from './SvgIcon'
 
 const components = [
+  MapChart,
   SvgIcon
 ]
 
