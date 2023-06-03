@@ -1,0 +1,24 @@
+.back-btn {
+  position: absolute;
+}
+
+@mixin module {
+  padding: 10px;
+  position: absolute;
+  top: 60px;
+  width: 400px;
+  height: 700px;
+  background: rgba(0, 21, 62, 0.70);
+  color: #FFF;
+  z-index: 12;
+}
+
+.module--left {
+  @include module;
+  left: 20px;
+}
+
+.module--right {
+  @include module;
+  right: 20px;
+}

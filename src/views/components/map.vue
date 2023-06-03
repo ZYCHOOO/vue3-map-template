@@ -34,11 +34,10 @@ export default defineComponent({
       })
     }
   },
-  setup(props, ctx) {
-    console.log('1111')
+  setup(props) {
     const mapInstance = ref(null)
     
-    const renderPolyLine = (bounds = []) => {
+    const renderPolyLine = (AMap: any, bounds = []) => {
       const { polylineConfig } = props;
     
       if (polylineConfig.show) {
@@ -88,7 +87,7 @@ export default defineComponent({
         }
         mapInstance.value = new AMap.Map('map', option)
     
-        renderPolyLine(bounds)
+        renderPolyLine(AMap, bounds)
       })
     }
     

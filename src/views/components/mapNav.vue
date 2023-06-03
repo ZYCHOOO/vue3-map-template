@@ -21,6 +21,7 @@
           :key="tab.id"
           class="map-nav-tab-item"
           v-html="tab.label"
+          @click="tabClick(tab.path!)"
         />
       </div>
       <div class="map-nav-tab--right">
@@ -29,6 +30,7 @@
           :key="tab.id"
           class="map-nav-tab-item"
           v-html="tab.label"
+          @click="tabClick(tab.path!)"
         />
       </div>
     </div>
@@ -37,6 +39,7 @@
 
 <script lang="ts">
 import { NavItem } from './type'
+import { useRouter } from 'vue-router'
 import { computed, defineComponent, PropType } from 'vue'
 
 export default defineComponent({
@@ -46,8 +49,8 @@ export default defineComponent({
     icon: { type: String, default: '' },
     tabs: { type: Array as PropType<NavItem[]>, required: true }
   },
-  setup(props, ctx) {
-    console.log(props, ctx)
+  setup(props) {
+    const router = useRouter()
     const leftTabs = computed<NavItem[]>(() => {
       return props.tabs.filter((_item , i) => i < props.tabs.length / 2)
     })
@@ -56,9 +59,14 @@ export default defineComponent({
       return props.tabs.filter((_item, i) => i >= props.tabs.length / 2)
     })
 
+    const tabClick = (path: string) => {
+      router.push(path)
+    }
+
     return {
       leftTabs,
-      rightTabs
+      rightTabs,
+      tabClick
     }
   }
 })

@@ -2,7 +2,7 @@
   <div class="map-index">
     <map-nav :tabs="navTabs">
       <template #left>
-        111
+        {{ currentTime }}
       </template>
       <template #right></template>
     </map-nav>
@@ -15,14 +15,25 @@
 import Map from './components/map.vue'
 import MapNav from './components/mapNav.vue'
 import { NAV_TABS } from '@/constant/enums'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'
 
-const currentTime = ref(null)
+const { proxy } = getCurrentInstance() as any
+
+let timer:NodeJS.Timer | null = null
+const currentTime = ref()
 const navTabs = ref(NAV_TABS)
 
-onMounted(() => {})
+onMounted(() => {
+  timer = setInterval(() => {
+    currentTime.value = proxy.$filters.dateTimeFilter(new Date().getTime(), 'YYYY年MM月DD HH:mm:ss')
+  }, 1000)
+})
 
-onUnmounted(() => {})
+onUnmounted(() => {
+  if (timer) {
+    clearInterval(Number(timer))
+  }
+})
 
 </script>
 
