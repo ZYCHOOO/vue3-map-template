@@ -1,26 +1,24 @@
 <template>
   <div
-    class="map-type collapse"
     :class="['map-type', expandFlag ? 'expand' : 'collapse']"
     @click="expandFlag = true"
-    v-click-outside="test"
+    v-click-outside="collapseMapType"
   >
-    <svg-icon v-if="!expandFlag" icon="mapType" />
-    <template v-else>
-      <div
-        v-for="item in mapTypes"
-        :key="item.id"
-        class="map-type-item"
-        @click="toggleMapType(item.value)"
-      >
-        <svg-icon :icon="item.icon" />
-      </div>
-    </template>
+    <svg-icon icon="mapType" class-name="map-type-svg" />
+    
+    <div
+      v-for="item in mapTypes"
+      :key="item.id"
+      class="map-type-item"
+      @click="toggleMapType(item.value)"
+    >
+      <svg-icon :icon="item.icon" />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue'
+import { ref, defineComponent, watch } from 'vue'
 import { MAP_TYPES } from '@/constant/enums'
 import { mapTypeStore } from '@/store/mapType'
 
@@ -34,15 +32,19 @@ export default defineComponent({
       mapTypeStore().toggleMapType(mapType)
     }
 
-    const test = () => {
-      console.log('shit')
+    const collapseMapType = () => {
+      if (expandFlag.value) {
+        expandFlag.value = !expandFlag.value
+      }
     }
+
+    watch(() => expandFlag.value, (val: any) => {console.log(val)})
 
     return {
       expandFlag,
       mapTypes,
       toggleMapType,
-      test
+      collapseMapType
     }
   }
 })
@@ -52,6 +54,7 @@ export default defineComponent({
 <style lang="scss" scoped>
   .map-type {
     @include flex-row;
+    @include flex-center;
     position: absolute;
     top: 700px;
     left: calc(#{$moduleWidth} + 60px);
@@ -61,14 +64,20 @@ export default defineComponent({
     box-shadow: 0px 3px 6px 1px rgba(46, 116, 227, .5);
     border-radius: 2px 2px 2px 2px;
     border: 1px solid #4F9EFD;
+    color: #4F9EFD;
     cursor: pointer;
     z-index: 12;
     transition: width .5s ease;
     &.expand {
       width: 80px;
+      :deep .map-type-svg {
+        display: none !important;
+      }
     }
     &.collapse {
-      @include flex-center;
+      .map-type-item {
+        display: none;
+      }
     }
     &-item {
       @include flex-center;
@@ -77,4 +86,5 @@ export default defineComponent({
       color: #4F9EFD;
     }
   }
+
 </style>
