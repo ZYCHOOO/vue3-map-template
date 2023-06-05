@@ -13,3 +13,9 @@ export const NAV_TABS = [
   { id: 5, label: '智慧医疗', path: '/medic' },
   { id: 6, label: '智慧教育', path: '/education' }
 ]
+
+// 地图图层类型
+export const MAP_TYPES = [
+  { id: 1, label: '标准地图', icon: 'standard', value: 'standard' },
+  { id: 2, label: '卫星地图', icon: 'satellite', value: 'satellite' }
+]

@@ -3,9 +3,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from 'vue'
+import { mapTypeStore } from '@/store/mapType'
+import { defineComponent, onMounted, ref, watch } from 'vue'
 import { GD_MAP_KEY, GD_MAP_SECURITY_CODE } from '@/constant/enums'
 import AMapLoader from '@amap/amap-jsapi-loader'
+import MapType from './MapType.vue'
 
 export default defineComponent({
   name: 'map',
@@ -35,6 +37,7 @@ export default defineComponent({
     }
   },
   setup(props) {
+    const mapType = mapTypeStore()
     const mapInstance = ref(null)
     
     const renderPolyLine = (AMap: any, bounds = []) => {
@@ -55,8 +58,13 @@ export default defineComponent({
     const initMapInstance = (AMap: any) => {
       const option:{[key:string]:any} = {
         viewMode: '3D',
-        mapStyle: props.mapStyle
+        mapStyle: props.mapStyle,
+        layers: []
       }
+
+      // 是否显示卫星地图
+      option.layers = mapType.currentMapType === 'satellite'
+        ? [new AMap.TileLayer.Satellite(), new AMap.TileLayer.RoadNet()] : []
     
       // 初始化 district 对象
       const district = new AMap.DistrictSearch({
@@ -104,6 +112,13 @@ export default defineComponent({
         initMapInstance(AMap)
       })
     }
+
+    watch(
+      () => mapType.currentMapType,
+      (_val) => {
+        loadMap(GD_MAP_KEY, GD_MAP_SECURITY_CODE)
+      }
+    )
     
     onMounted(() => {
       loadMap(GD_MAP_KEY, GD_MAP_SECURITY_CODE)

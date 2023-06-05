@@ -7,13 +7,15 @@
       <template #right></template>
     </map-nav>
     <Map />
+    <map-type />
     <router-view />
   </div>
 </template>
 
 <script setup lang="ts">
-import Map from './components/map.vue'
-import MapNav from './components/mapNav.vue'
+import Map from './components/Map.vue'
+import MapNav from './components/MapNav.vue'
+import MapType from './components/MapType.vue'
 import { NAV_TABS } from '@/constant/enums'
 import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'
 
