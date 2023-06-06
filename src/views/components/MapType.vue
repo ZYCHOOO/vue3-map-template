@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="['map-type', expandFlag ? 'expand' : 'collapse']"
+    :class="['map-type', 'touchable', expandFlag ? 'expand' : 'collapse']"
     @click="expandFlag = true"
     v-click-outside="collapseMapType"
   >
@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent, watch } from 'vue'
+import { ref, defineComponent } from 'vue'
 import { MAP_TYPES } from '@/constant/enums'
 import { mapTypeStore } from '@/store/mapType'
 
@@ -37,8 +37,6 @@ export default defineComponent({
         expandFlag.value = !expandFlag.value
       }
     }
-
-    watch(() => expandFlag.value, (val: any) => {console.log(val)})
 
     return {
       expandFlag,
@@ -65,7 +63,6 @@ export default defineComponent({
     border-radius: 2px 2px 2px 2px;
     border: 1px solid #4F9EFD;
     color: #4F9EFD;
-    cursor: pointer;
     z-index: 12;
     transition: width .5s ease;
     &.expand {

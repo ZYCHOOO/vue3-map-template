@@ -19,7 +19,7 @@
         <div
           v-for="tab in leftTabs"
           :key="tab.id"
-          class="map-nav-tab-item"
+          class="map-nav-tab-item touchable"
           v-html="tab.label"
           @click="tabClick(tab.path!)"
         />
@@ -28,7 +28,7 @@
         <div
           v-for="tab in rightTabs"
           :key="tab.id"
-          class="map-nav-tab-item"
+          class="map-nav-tab-item touchable"
           v-html="tab.label"
           @click="tabClick(tab.path!)"
         />
@@ -124,7 +124,6 @@ export default defineComponent({
       border: 1px solid #6CFEFF;
       // width: 33%;
       height: 16px;
-      cursor: pointer;
     }
   }
 </style>

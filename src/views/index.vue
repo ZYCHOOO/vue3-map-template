@@ -1,13 +1,18 @@
 <template>
   <div class="map-index">
+    <!-- 顶部导航栏 -->
     <map-nav :tabs="navTabs">
       <template #left>
         {{ currentTime }}
       </template>
       <template #right></template>
     </map-nav>
+    <!-- 地图 -->
     <Map />
+    <!-- 地图图层切换 -->
     <map-type />
+    <!-- 地图抽屉 -->
+    <map-drawer />
     <router-view />
   </div>
 </template>
@@ -15,6 +20,7 @@
 <script setup lang="ts">
 import Map from './components/Map.vue'
 import MapNav from './components/MapNav.vue'
+import MapDrawer from './components/MapDrawer.vue'
 import MapType from './components/MapType.vue'
 import { NAV_TABS } from '@/constant/enums'
 import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'

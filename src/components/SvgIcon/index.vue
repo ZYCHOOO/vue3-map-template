@@ -5,9 +5,16 @@
     :style="externalIconStyle"
     class="svg-icon svg-icon--external"
     :class="className"
+    @click="iconClick"
   />
   <!-- 内部 svg -->
-  <svg v-else class="svg-icon" :class="className" aria-hidden="true">
+  <svg
+    v-else
+    class="svg-icon"
+    :class="className"
+    aria-hidden="true"
+    @click="iconClick"
+  >
     <use :xlink:href="`#icon-${icon}`" />
   </svg>
 </template>
@@ -22,7 +29,7 @@ export default defineComponent({
     icon: { type: String, required: true },
     className: { type: String, default: '' }
   },
-  setup(props) {
+  setup(props, { emit }) {
     const isExternal = computed(() => external(props.icon))
 
     const externalIconStyle = computed(() => ({
@@ -30,9 +37,14 @@ export default defineComponent({
       '-webkit-mask': `url(${props.icon}) no-repeat 50% 50%`
     }))
 
+    const iconClick = () => {
+      emit('icon-click')
+    }
+
     return {
       isExternal,
-      externalIconStyle
+      externalIconStyle,
+      iconClick
     }
   }
 })

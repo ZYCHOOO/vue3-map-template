@@ -7,7 +7,6 @@ import { mapTypeStore } from '@/store/mapType'
 import { defineComponent, onMounted, ref, watch } from 'vue'
 import { GD_MAP_KEY, GD_MAP_SECURITY_CODE } from '@/constant/enums'
 import AMapLoader from '@amap/amap-jsapi-loader'
-import MapType from './MapType.vue'
 
 export default defineComponent({
   name: 'map',
@@ -132,8 +131,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
   .map {
-    // width: 100vw;
-    // height: 100vh;
     width: 100%;
     height: 100%;
   }
