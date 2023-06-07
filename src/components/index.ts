@@ -1,10 +1,12 @@
 import { App } from 'vue'
 import MapChart from './MapChart'
 import SvgIcon from './SvgIcon'
+// import new components
 
 const components = [
   MapChart,
-  SvgIcon
+  SvgIcon,
+  // add new components
 ]
 
 export default {
