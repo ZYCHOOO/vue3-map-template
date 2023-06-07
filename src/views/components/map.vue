@@ -7,6 +7,7 @@ import { mapTypeStore } from '@/store/mapType'
 import { defineComponent, onMounted, ref, watch } from 'vue'
 import { GD_MAP_KEY, GD_MAP_SECURITY_CODE } from '@/constant/enums'
 import AMapLoader from '@amap/amap-jsapi-loader'
+import { mapMarkerEffect } from '@/hooks/mapMarkerEffect'
 
 export default defineComponent({
   name: 'map',
@@ -79,9 +80,7 @@ export default defineComponent({
         console.log('搜索结果为：', status, result)
     
         const bounds = result.districtList[0]["boundaries"]
-    
-        console.log('shithole', bounds)
-    
+        
         // 获取区域各坐标
         const mask = []
         for (let i = 0; i < bounds.length; i += 1) {
@@ -95,6 +94,8 @@ export default defineComponent({
         mapInstance.value = new AMap.Map('map', option)
     
         renderPolyLine(AMap, bounds)
+
+        mapMarkerEffect(mapInstance)
       })
     }
     
