@@ -1,16 +1,16 @@
 <template>
-  <div id="map" class="map" />
+  <div id="map-container" class="map" />
 </template>
 
 <script lang="ts">
 import { mapTypeStore } from '@/store/mapType'
 import { defineComponent, onMounted, ref, watch } from 'vue'
 import { GD_MAP_KEY, GD_MAP_SECURITY_CODE } from '@/constant/enums'
-import AMapLoader from '@amap/amap-jsapi-loader'
+import * as AMapLoader from '@amap/amap-jsapi-loader'
 import { mapMarkerEffect } from '@/hooks/mapMarkerEffect'
 
 export default defineComponent({
-  name: 'map',
+  name: 'MapContainer',
   props: {
     // 地图风格，默认为极夜蓝
     mapStyle: { type: String, default: 'amap://styles/darkblue' },
@@ -91,7 +91,7 @@ export default defineComponent({
         if (!props.polylineConfig.showOuter) {
           option.mask = mask
         }
-        mapInstance.value = new AMap.Map('map', option)
+        mapInstance.value = new AMap.Map('map-container', option)
     
         renderPolyLine(AMap, bounds)
 

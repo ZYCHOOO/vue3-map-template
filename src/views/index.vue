@@ -8,7 +8,7 @@
       <template #right></template>
     </map-nav>
     <!-- 地图 -->
-    <Map />
+    <map-container />
     <!-- 地图图层切换 -->
     <map-type />
     <!-- 地图抽屉 -->
@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import Map from './components/Map.vue'
+import MapContainer from './components/MapContainer.vue'
 import MapNav from './components/MapNav.vue'
 import MapDrawer from './components/MapDrawer.vue'
 import MapType from './components/MapType.vue'

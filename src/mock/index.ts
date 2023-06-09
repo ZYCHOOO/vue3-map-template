@@ -1,8 +1,8 @@
 import Mock from "mockjs"
 import { MockParams } from './type'
 import { getEnvValue } from '@/utils/index'
-import mapTree from './mapTree'
-const mocks = [...mapTree]
+import map from './map'
+const mocks = [...map]
 
 //设置延时时间
 Mock.setup({
@@ -39,7 +39,7 @@ export function mockXHR() {
     }
     this.proxy_send(...arguments)
   }
-  
+
   let i: MockParams
   for (i of mocks) {
     Mock.mock(
