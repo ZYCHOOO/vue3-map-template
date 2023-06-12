@@ -21,7 +21,8 @@ export function mapMarkerEffect (mapInstance: any) {
     if(newMarkers.length === 0) {
       return oldMarkers
     } else {
-
+      const latestMarkerName = newMarkers.map(item => item._opts.name)
+      return oldMarkers.filter(item => !latestMarkerName.includes(item._opts.name))
     }
   }
 

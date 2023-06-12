@@ -23,5 +23,15 @@ export default [
         data: markers['college']
       }
     }
+  },
+  {
+    url: '/highSchool/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['highSchool']
+      }
+    }
   }
 ]

@@ -6,7 +6,13 @@
     { "longitude": 113.35, "latitude": 23.15, "name": "华南农业大学" },
     { "longitude": 113.4, "latitude": 23, "name": "广东工业大学" }
   ],
-  "highSchool": [],
+  "highSchool": [
+    { "longitude": 113.34, "latitude": 23.13, "name": "华师附中" },
+    { "longitude": 113.24, "latitude": 23.14, "name": "广雅中学" },
+    { "longitude": 113.29, "latitude": 23.13, "name": "执信中学" },
+    { "longitude": 113.23, "latitude": 23.08, "name": "省实中学" },
+    { "longitude": 113.26, "latitude": 23.14, "name": "二中应元" }
+  ],
   "middleSchool": [],
   "primarySchool": [],
   "kinderGarden": []
