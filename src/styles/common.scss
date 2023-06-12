@@ -10,6 +10,13 @@
   border: 1px solid #4F9EFD;
 }
 
+.test-btn {
+  @include flex-center;
+  width: 200px;
+  height: 56px;
+  border: 1px solid #4F9EFD;
+}
+
 .touchable {
   cursor: pointer;
 }

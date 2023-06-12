@@ -1,10 +1,10 @@
 {
   "college": [
-    { "longitude": 113.30, "latitude": 29.10, "name": "中山大学" },
+    { "longitude": 113.3, "latitude": 23.1, "name": "中山大学" },
     { "longitude": 113.34, "latitude": 23.13, "name": "暨南大学" },
-    { "longitude": 113.43, "latitude": 23.17, "name": "华南理工大学" },
-    { "longitude": 113.34, "latitude": 23.13, "name": "华南农业大学" },
-    { "longitude": 113.39, "latitude": 23.03, "name": "广东工业大学" }
+    { "longitude": 113.4, "latitude": 23.05, "name": "华南理工大学" },
+    { "longitude": 113.35, "latitude": 23.15, "name": "华南农业大学" },
+    { "longitude": 113.4, "latitude": 23, "name": "广东工业大学" }
   ],
   "highSchool": [],
   "middleSchool": [],

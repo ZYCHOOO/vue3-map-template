@@ -7,19 +7,29 @@ export function mapMarkerEffect (mapInstance: any) {
 
   watch(
     () => mapMarker.markers,
-    (val: any) => {
-      setMarkers(val)
+    (val: any[], oldVal: any[]) => {
+      if (val.length > oldVal.length) {
+        addMarkers(val)
+      } else {
+        const removeMarkersData = getRemoveMarkers(val, oldVal)
+        removeMarkers(removeMarkersData as any[])
+      }
     }
   )
 
-  const setMarkers = (val: any[]) => {
-    let markers = [] as any[]
-    val.forEach((item) => {
-      const marker = new AMap.Marker({
-        position: new AMap.LngLat(item.longitude, item.latitude)
-      })
-      markers.push(marker)
-    })
-    mapInstance.value.add(markers)
+  const getRemoveMarkers = (newMarkers: any[], oldMarkers: any[]) => {
+    if(newMarkers.length === 0) {
+      return oldMarkers
+    } else {
+
+    }
+  }
+
+  const addMarkers = (addMarkers: any[]) => {
+    mapInstance.value.add(addMarkers)
+  }
+
+  const removeMarkers = (removeMarkers: any[]) => {
+    mapInstance.value.remove(removeMarkers)
   }
 }

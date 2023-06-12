@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+declare let AMap: any
 
 interface MarkerItem {
   longitude: number | string,
@@ -12,15 +13,23 @@ interface MarkerItem {
 
 export const mapMarkerStore = defineStore('mapMarker', () => {
 
-  const markers = ref([] as MarkerItem[])
+  const markers = ref([] as any[])
 
-  const setMarkers = (markersData: MarkerItem[]) => {
+  const setMarkers = (originMarkers: MarkerItem[]) => {
+    let markersData = [] as any[]
+    originMarkers.forEach((item: MarkerItem) => {
+      const marker = new AMap.Marker({
+        ...item,
+        position: new AMap.LngLat(item.longitude, item.latitude)
+      })
+      markersData.push(marker)
+    })
     markers.value = [...markers.value, ...markersData]
   }
 
   const clearMarkers = (origin?: string) => {
     markers.value = origin
-      ? markers.value.filter(item => item.origin !== origin)
+      ? markers.value.filter(item => item._opts.origin !== origin)
       : []
   }
 
