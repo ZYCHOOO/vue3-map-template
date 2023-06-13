@@ -21,15 +21,20 @@ module.exports = {
     const lowerComponentName = data.componentName.toLowerCase()
     actions.push({
       type: 'add', // 代表添加文件
-      path: `src/components/{{componentName}}/index.vue`, // 这里的name就是上面定义的键
+      path: `src/components/{{ componentName }}/index.vue`, // 这里的name就是上面定义的键
       templateFile: 'plop-templates/templates/component.hbs'
     })
     if (data.globalRegister) {
+      actions.push(({
+        type: 'add',
+        path: 'src/components/{{ componentName }}/index.ts',
+        templateFile: 'plop-templates/templates/componentInstall.hbs'
+      }))
       actions.push({
         type: 'modify',
         path: 'src/components/index.ts',
         pattern: /(\/\/ import new components)/gi,
-        template: "import {{ componentName }} from './{{ componentName }}/index.vue'\r\n$1"
+        template: "import {{ componentName }} from './{{ componentName }}'\r\n$1"
       })
       actions.push({
         type: 'modify',

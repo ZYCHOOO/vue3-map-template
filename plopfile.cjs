@@ -1,4 +1,5 @@
 const apiGenerator = require('./plop-templates/generators/apiGenerator.cjs')
+const componentGenerator = require('./plop-templates/generators/componentGenerator.cjs')
 //  Plop 入口文件 需要导出一个函数
 // 此函数接收一个 plop 对象，用于创建生成器任务
 
@@ -22,4 +23,7 @@ module.exports = plop => {
 
   // 生成api
   plop.setGenerator('api', apiGenerator)
+
+  // 生成组件
+  plop.setGenerator('component', componentGenerator)
 }
