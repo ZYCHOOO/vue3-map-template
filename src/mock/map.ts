@@ -33,5 +33,35 @@ export default [
         data: markers['highSchool']
       }
     }
+  },
+  {
+    url: '/middleSchool/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['middleSchool']
+      }
+    }
+  },
+  {
+    url: '/primarySchool/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['primarySchool']
+      }
+    }
+  },
+  {
+    url: '/kinderGarden/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['kinderGarden']
+      }
+    }
   }
 ]

@@ -17,6 +17,7 @@ export function mapMarkerEffect (mapInstance: any) {
     }
   )
 
+  // 获取移除的点标记
   const getRemoveMarkers = (newMarkers: any[], oldMarkers: any[]) => {
     if(newMarkers.length === 0) {
       return oldMarkers
@@ -26,10 +27,12 @@ export function mapMarkerEffect (mapInstance: any) {
     }
   }
 
+  // 地图添加点标记
   const addMarkers = (addMarkers: any[]) => {
     mapInstance.value.add(addMarkers)
   }
 
+  // 地图移除点标记
   const removeMarkers = (removeMarkers: any[]) => {
     mapInstance.value.remove(removeMarkers)
   }
