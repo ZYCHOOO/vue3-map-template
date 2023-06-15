@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElTree: typeof import('element-plus/es')['ElTree']
+    MapBtn: typeof import('./src/components/MapBtn/index.vue')['default']
     MapChart: typeof import('./src/components/MapChart/index.vue')['default']
     MapDialog: typeof import('./src/components/MapDialog/index.vue')['default']
     MapTable: typeof import('./src/components/MapTable/index.vue')['default']

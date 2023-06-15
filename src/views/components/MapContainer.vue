@@ -8,6 +8,7 @@ import { defineComponent, onMounted, ref, watch } from 'vue'
 import { GD_MAP_KEY, GD_MAP_SECURITY_CODE } from '@/constant/enums'
 import * as AMapLoader from '@amap/amap-jsapi-loader'
 import { mapMarkerEffect } from '@/hooks/mapMarkerEffect'
+import { mapClickEffect } from '@/hooks/mapClickEffect'
 
 export default defineComponent({
   name: 'MapContainer',
@@ -96,6 +97,7 @@ export default defineComponent({
         renderPolyLine(AMap, bounds)
 
         mapMarkerEffect(mapInstance)
+        mapClickEffect(mapInstance)
       })
     }
     

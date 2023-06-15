@@ -13,17 +13,19 @@
     <map-type />
     <!-- 地图抽屉 -->
     <map-drawer />
+    <!-- 地图弹窗 -->
+    <MapDialog v-model="dialogVisible" />
     <router-view />
   </div>
 </template>
 
 <script setup lang="ts">
-import MapContainer from './components/MapContainer.vue'
 import MapNav from './components/MapNav.vue'
-import MapDrawer from './components/MapDrawer.vue'
 import MapType from './components/MapType.vue'
+import MapDrawer from './components/MapDrawer.vue'
+import MapContainer from './components/MapContainer.vue'
 import { NAV_TABS } from '@/constant/enums'
-import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'
+import { ref, onMounted, onUnmounted, getCurrentInstance, watch } from 'vue'
 
 const { proxy } = getCurrentInstance() as any
 

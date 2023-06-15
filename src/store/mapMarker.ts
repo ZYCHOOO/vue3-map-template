@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { markerClickEffect } from '@/hooks/mapClickEffect'
 declare let AMap: any
 
 interface MarkerItem {
@@ -20,7 +21,11 @@ export const mapMarkerStore = defineStore('mapMarker', () => {
     originMarkers.forEach((item: MarkerItem) => {
       const marker = new AMap.Marker({
         ...item,
+        clickable: true,
         position: new AMap.LngLat(item.longitude, item.latitude)
+      })
+      marker.on('click', (event: any) => {
+        markerClickEffect(event)
       })
       markersData.push(marker)
     })
