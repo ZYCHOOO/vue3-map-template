@@ -25,11 +25,11 @@ module.exports = {
       templateFile: 'plop-templates/templates/component.hbs'
     })
     if (data.globalRegister) {
-      actions.push(({
+      actions.push({
         type: 'add',
         path: 'src/components/{{ componentName }}/index.ts',
         templateFile: 'plop-templates/templates/componentInstall.hbs'
-      }))
+      })
       actions.push({
         type: 'modify',
         path: 'src/components/index.ts',

@@ -2,7 +2,11 @@ import Mock from "mockjs"
 import { MockParams } from './type'
 import { getEnvValue } from '@/utils/index'
 import map from './map'
-const mocks = [...map]
+// import new mock
+const mocks = [
+  ...map,
+  // add mock into mocks
+]
 
 //设置延时时间
 Mock.setup({
