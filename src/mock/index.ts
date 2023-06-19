@@ -2,10 +2,12 @@ import Mock from "mockjs"
 import { MockParams } from './type'
 import { getEnvValue } from '@/utils/index'
 import map from './map'
+import medic from './medic'
 // import new mock
 const mocks = [
   ...map,
-  // add mock into mocks
+  ...medic,
+// add mock into mocks
 ]
 
 //设置延时时间

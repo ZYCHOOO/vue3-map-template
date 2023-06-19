@@ -63,5 +63,25 @@ export default [
         data: markers['kinderGarden']
       }
     }
+  },
+  {
+    url: '/hospital/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['hospital']
+      }
+    }
+  },
+  {
+    url: '/pharmacy/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['pharmacy']
+      }
+    }
   }
 ]

@@ -14,8 +14,8 @@
     { "id": "", "label": "幼儿园", "type": "kinderGarden", "url": "/kinderGarden/markers", "total": "", "icon": "" }
   ],
   "medic": [
-    { "id": "", "label": "定点医疗机构", "type": "hostipal", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "定点零售店", "type": "pharmacy", "url": "", "total": "", "icon": "" }
+    { "id": "", "label": "定点医疗机构", "type": "hostipal", "url": "/hospital/markers", "total": "", "icon": "" },
+    { "id": "", "label": "定点零售店", "type": "pharmacy", "url": "/pharmacy/markers", "total": "", "icon": "" }
   ],
   "prevention": [
     { "id": "", "label": "低风险地区", "type": "lowRisk", "url": "", "total": "", "icon": "" },

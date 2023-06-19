@@ -85,6 +85,8 @@ export default defineComponent({
       }
     }
 
+    getTreeData(route.path.replace('/', ''))
+
     return {
       treeData,
       treeProps,

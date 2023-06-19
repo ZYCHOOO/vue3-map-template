@@ -13,7 +13,7 @@ export default defineComponent({
     chartOption: { type: Object, required: true }
   },
 
-  setup(props, ctx) {
+  setup(props, _ctx) {
     const echartId = ref('')
 
     const drawChart = () => {
@@ -29,15 +29,15 @@ export default defineComponent({
     }
 
     watch(
-      props.chartOption,
-      { deep: true },
+      () => props.chartOption,
       () => {
         drawChart()
-      }
+      },
+      { deep: true }
     )
 
     onBeforeMount(() => {
-      echartId.value = `echarts-id-${parseInt(Math.random() * 1000000)}`
+      echartId.value = `echarts-id-${parseInt((Math.random() * 1000).toString())}`
     })
 
     onMounted(() => {
@@ -47,10 +47,8 @@ export default defineComponent({
     return {
       echartId
     }
-  },
-
+  }
 })
-
 </script>
 
 <style lang="scss" scoped>

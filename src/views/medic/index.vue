@@ -1,14 +1,16 @@
 <template>
   <border-box12 class="module--left">
-    medic left
+    <medic-left />
   </border-box12>
   <border-box12 class="module--right">
-    medic right
+    <medic-right />
   </border-box12>
 </template>
 
 <script setup lang="ts">
 import {} from 'vue'
+import MedicLeft from './medicLeft.vue'
+import MedicRight from './medicRight.vue'
 import { BorderBox12 } from '@kjgl77/datav-vue3'
 
 </script>
