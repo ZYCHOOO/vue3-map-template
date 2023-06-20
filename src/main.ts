@@ -11,6 +11,7 @@ import installFilters from '@/utils/filters'
 import 'virtual:svg-icons-register'
 
 import '@/styles/index.scss'
+// import 'amfe-flexible/index.js'
 
 initMockServer()
 

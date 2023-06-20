@@ -23,11 +23,11 @@
 
 @mixin module {
   @include flex-column;
-  padding: 20px;
+  padding: 1.25rem /* 20/16 */;
   position: absolute !important;
-  top: 60px;
-  width: 400px !important;
-  height: 700px !important;
+  top: 5rem /* 80/16 */;
+  width: 25rem /* 400/16 */ !important;
+  height: 43.75rem /* 700/16 */ !important;
   background: $defaultBgColor;
   color: #FFF;
   z-index: 12;
@@ -35,10 +35,10 @@
 
 .module--left {
   @include module;
-  left: 20px;
+  left: 1.25rem /* 20/16 */;
 }
 
 .module--right {
   @include module;
-  right: 20px;
+  right: 1.25rem /* 20/16 */;
 }

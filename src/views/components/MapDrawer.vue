@@ -104,11 +104,11 @@ export default defineComponent({
 <style lang="scss" scoped>
   .map-drawer {
     position: absolute;
-    top: 160px;
-    left: calc(#{$moduleWidth} + 60px);
+    top: 10rem /* 160/16 */;
+    left: calc(#{$moduleWidth} + 3.75rem /* 60/16 */);
     &-trigger {
-      width: 55px;
-      height: 55px;
+      width: 3.4375rem /* 55/16 */;
+      height: 3.4375rem /* 55/16 */;
       background-image: url('@/assets/images/map-drawer.png');
       background-repeat: no-repeat;
       background-size: contain;
@@ -116,8 +116,8 @@ export default defineComponent({
     }
     &-content {
       position: absolute !important;
-      width: 300px;
-      height: 500px;
+      width: 18.75rem /* 300/16 */;
+      height: 31.25rem /* 500/16 */;
       background: $defaultBgColor;
       z-index: 12;
 

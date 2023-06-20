@@ -6,28 +6,26 @@
       {{ total }}
     </div>
 
-    <div class="insure-box">
-      <div
-        v-for="item in insureData"
-        :key="item.id"
-        class="insure-item"
-        :class="['insure-item', item.key]"
-      >
-        <span>{{ item.name }}</span>
-        <span>{{ item.count }}</span>
-      </div>
+    <div
+      v-for="item in insureData"
+      :key="item.id"
+      class="insure-item"
+      :class="['insure-item', item.key]"
+    >
+      <span class="insure-item-title">{{ item.name }}</span>
+      <span class="insure-item-count ml-auto">{{ item.count }}</span>
     </div>
 
     <div class="type-chart">
       <map-chart
-        :chart-style="{ height: '300px' }"
+        :chart-style="{ height: '15rem' }"
         :chart-option="typeChartOption"
       />
     </div>
 
     <div class="source-chart">
       <map-chart
-        :chart-style="{ height: '300px' }"
+        :chart-style="{ height: '15rem' }"
         :chart-option="sourceChartOption"
       />
     </div>
@@ -86,12 +84,28 @@ const setSourceChartData = (data: any) => {
 
 const typeChartOption = computed(() => {
   return {
-    tooltip: {
-      show: true
+    tooltip: { show: true },
+    legend: {
+      orient: 'vertical',
+      right: '10%',
+      top: '42%',
+      itemWidth: 10,
+      itemHeight: 10,
+      icon: 'circle',
+      textStyle: {
+        fontSize: 14,
+        color: '#A0B2D3',
+        padding: [0,2, 0, 2],
+      }
     },
     series: [{
       type: 'pie',
-      radius: ["66%", "55%"],
+      width: 300,
+      radius: ["66%", "50%"],
+      label: {
+        fontSize: 8,
+        color: '#A0B2D3'
+      },
       data: typeChartData.value
     }]
   }
@@ -99,12 +113,30 @@ const typeChartOption = computed(() => {
 
 const sourceChartOption = computed(() => {
   const option = {
-    tooltip: {
-      show: true
+    tooltip: { show: true },
+    legend: {
+      orient: 'vertical',
+      right: '0%',
+      top: '34%',
+      itemWidth: 10,
+      itemHeight: 10,
+      icon: 'circle',
+      textStyle: {
+        fontSize: 14,
+        color: "#A0B2D3",
+        padding: [0,2, 0, 2],
+      }
     },
     series: [{
+      width: 300,
+      // left: -10,
       type: 'pie',
-      radius: ["66%", "55%"],
+      radius: ["66%", "50%"],
+      label: {
+        fontSize: 8,
+        color: '#A0B2D3',
+      },
+      color: ['#4F9EFD', '#00EA9C', '#7662D6', '#FF913F'],
       data: sourceChartData.value
     }]
   }
@@ -120,22 +152,42 @@ getMedicCount()
     &-title {
       @include flex-row;
       @include flex-align-center;
-      background: linear-gradient(90deg,#1b3e69,#122b4e);
+      margin-bottom: 1.125rem /* 18/16 */;
+      padding: 0 1.125rem /* 18/16 */;
+      height: 2.5rem /* 40/16 */;
+      background: linear-gradient(90deg, rgba(79,158,253,0.3) 0%, rgba(79,158,253,0.04) 100%);
     }
-    .insure-box {
+    .insure-item {
       @include flex-row;
-      margin-top: 30px;
-      .insure-item {
-        @include flex-column;
-        width: 30%;
-        &.workers {
-          background: linear-gradient(90deg,rgba(79,158,253,.2),rgba(79,158,253,.03));
+      @include flex-align-center;
+      margin-bottom: .875rem /* 14/16 */;
+      padding: 0 1.375rem /* 22/16 */;
+      height: 2.875rem /* 46/16 */;
+      &-title {
+        font-size: .875rem /* 14/16 */;
+        color: $defaultTextColor;
+      }
+      &-count {
+        font-family: Din Alternate;
+        font-size: 1.875rem /* 30/16 */;
+        font-weight: bold;
+      }
+      &.workers {
+        background: linear-gradient(90deg,rgba(79,158,253,.2),rgba(79,158,253,.03));
+        .insure-item-count {
+          color: #FF913F;
         }
-        &.resident {
-          background: linear-gradient(90deg,rgba(0,234,156,.2),rgba(0,234,156,.03));
+      }
+      &.resident {
+        background: linear-gradient(90deg,rgba(0,234,156,.2),rgba(0,234,156,.03));
+        .insure-item-count {
+          color: #4F9EFD;
         }
-        &.birth {
-          background: linear-gradient(90deg,rgba(255,146,63,.2),rgba(255,146,63,.03));
+      }
+      &.birth {
+        background: linear-gradient(90deg,rgba(255,146,63,.2),rgba(255,146,63,.03));
+        .insure-item-count {
+          color: #00E9EA;
         }
       }
     }

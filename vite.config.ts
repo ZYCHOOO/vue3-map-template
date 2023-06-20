@@ -4,6 +4,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import postCssPxToRem from 'postcss-pxtorem'
 
 import { resolve } from 'path'
 
@@ -40,6 +41,15 @@ export default defineConfig({
           @import "@/styles/common.scss";
         `
       }
+    },
+    // 适配
+    postcss: {
+      plugins: [
+        postCssPxToRem({
+          rootValue: 192, // 设计稿尺寸 1rem大小
+          propList: ['*'], // 需要转换的属性，这里选择全部都进行转换
+        })
+      ]
     }
   }
 })

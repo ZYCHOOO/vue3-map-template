@@ -77,20 +77,20 @@ export default defineComponent({
   .map-nav-wrapper {
     position: absolute;
     top: 0;
-    width: 100vw;
-    height: 40px;
+    width: 100%;
+    height: 2.9375rem /* 47/16 */;
     background-image: url('@/assets/images/top-bg.png');
-    background-size: 100%;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     color: #FFF;
     z-index: 12;
     &--left {
       position: absolute;
-      left: 10px;
+      left: .625rem /* 10/16 */;
     }
     &--right {
       position: absolute;
-      right: 10px;
+      right: .625rem /* 10/16 */;
     }
     &--title {
       @include flex-row;
@@ -105,6 +105,7 @@ export default defineComponent({
     position: absolute;
     left: 59%;
     top: 20px;
+    top: 1.25rem /* 20/16 */;
     width: 76%;
     transform: translateX(-62%);
     &--left {
@@ -119,11 +120,10 @@ export default defineComponent({
     }
     &-item {
       @include flex-center;
-      padding: 2px 4px;
-      border-radius: 4px;
+      padding: .125rem .5rem /* 2/16 */ /* 8/16 */;
+      border-radius: .5rem /* 8/16 */;
       border: 1px solid #6CFEFF;
-      // width: 33%;
-      height: 16px;
+      height: 2rem /* 32/16 */;
     }
   }
 </style>

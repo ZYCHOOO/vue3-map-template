@@ -54,10 +54,10 @@ export default defineComponent({
     @include flex-row;
     @include flex-center;
     position: absolute;
-    top: 700px;
-    left: calc(#{$moduleWidth} + 60px);
-    width: 38px;
-    height: 38px;
+    top: 43.75rem /* 700/16 */;
+    left: calc(#{$moduleWidth} + 3.75rem /* 60/16 */);
+    width: 2.375rem /* 38/16 */;
+    height: 2.375rem /* 38/16 */;
     background: rgba(0, 21, 62, .7);
     box-shadow: 0px 3px 6px 1px rgba(46, 116, 227, .5);
     border-radius: 2px 2px 2px 2px;
@@ -66,7 +66,7 @@ export default defineComponent({
     z-index: 12;
     transition: width .5s ease;
     &.expand {
-      width: 80px;
+      width: 5rem /* 80/16 */;
       :deep .map-type-svg {
         display: none !important;
       }
@@ -78,7 +78,7 @@ export default defineComponent({
     }
     &-item {
       @include flex-center;
-      width: 38px;
+      width: 2.375rem /* 38/16 */;
       height: 100%;
       color: #4F9EFD;
     }

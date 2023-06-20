@@ -24,10 +24,13 @@
   "devDependencies": {
     "@types/node": "^20.2.5",
     "@vitejs/plugin-vue": "^4.1.0",
+    "amfe-flexible": "^2.2.1",
     "babel-plugin-component": "^1.1.1",
     "dayjs": "^1.11.7",
+    "lib-flexible": "^0.3.2",
     "mockjs": "^1.1.0",
     "plop": "^3.1.2",
+    "postcss-pxtorem": "^5.1.1",
     "sass": "^1.62.1",
     "typescript": "^5.0.2",
     "unplugin-auto-import": "^0.16.4",
