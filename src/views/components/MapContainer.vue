@@ -60,7 +60,10 @@ export default defineComponent({
       const option:{[key:string]:any} = {
         viewMode: '3D',
         mapStyle: props.mapStyle,
-        layers: []
+        layers: [],
+        zoom: 9.4,
+        doubleClickZoom: true,
+        center: [113.48, 23.18]
       }
 
       // 是否显示卫星地图

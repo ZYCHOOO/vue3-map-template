@@ -97,6 +97,11 @@ export default defineComponent({
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
+      span {
+        font-size: 1.875rem /* 30/16 */;
+        color: $defaultTitleColor;
+        font-family: 'ShiShangZhongHei';
+      }
     }
   }
   .map-nav-tab {
