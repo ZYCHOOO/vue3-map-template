@@ -4,6 +4,7 @@
 
 <script lang="ts">
 import { mapTypeStore } from '@/store/mapType'
+import { mapIconStore } from '@/store/mapIcon'
 import { defineComponent, onMounted, ref, watch } from 'vue'
 import { GD_MAP_KEY, GD_MAP_SECURITY_CODE } from '@/constant/enums'
 import * as AMapLoader from '@amap/amap-jsapi-loader'
@@ -39,6 +40,7 @@ export default defineComponent({
   },
   setup(props) {
     const mapType = mapTypeStore()
+    const mapIcon = mapIconStore()
     const mapInstance = ref(null)
     
     const renderPolyLine = (AMap: any, bounds = []) => {
@@ -101,6 +103,8 @@ export default defineComponent({
 
         mapMarkerEffect(mapInstance)
         mapClickEffect(mapInstance)
+
+        mapIcon.setIcons()
       })
     }
     
