@@ -2,13 +2,13 @@ import { App, Directive } from 'vue'
 
 export default function installCountDirective(app: App) {
   const countDirective:Directive = {
-    mounted(el, binding) {
+    updated(el, binding) {
       const { arg, value } = binding
-      const resultNum = el.innerText
+      const resultNum = Number(arg)
       // 单位名称
       const unitName = value.unit || ''
       // 动画间隔
-      const duration = Number(arg)
+      const duration = 30
       // 步长 数据增加间隔
       const step = Number((resultNum / duration).toFixed(0))
       let count = 0

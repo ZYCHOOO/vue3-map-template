@@ -2,8 +2,7 @@
   <div class="medic-left">
     <div class="medic-left-title">
       总参保人数：
-      <!-- <span v-if="total" v-count:3000="{ unit: '人' }">{{ total }}</span> -->
-      {{ total }}
+      <span v-count:[total]="{ unit: '人' }" />
     </div>
 
     <div
