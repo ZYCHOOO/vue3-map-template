@@ -10,11 +10,11 @@ export default function installCountDirective(app: App) {
       // 动画间隔
       const duration = Number(arg)
       // 步长 数据增加间隔
-      const step = resultNum / duration
+      const step = Number((resultNum / duration).toFixed(0))
       let count = 0
       let timer:any
       timer = setInterval(() => {
-        count++
+        count = count + step
         el.innerText = `${count}${unitName}`
         if (count > resultNum) {
           count = resultNum
@@ -23,7 +23,7 @@ export default function installCountDirective(app: App) {
           clearInterval(timer)
           timer = null
         }
-      }, Number(step.toFixed(0)))
+      }, duration)
     }
   }
   app.directive('count', countDirective)
