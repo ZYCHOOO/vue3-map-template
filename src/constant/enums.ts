@@ -1,8 +1,9 @@
-// 高德地图 key
-export const GD_MAP_KEY = '49966c5916240c787eb895c046a4cdd5'
-
-// 高德地图安全密钥
-export const GD_MAP_SECURITY_CODE = 'a2255544574bd38d7103e43ac150c6c3'
+export enum GD_MAP_CONFIG {
+  // 高德地图 key
+  KEY = '',
+  // 高德地图安全密钥
+  SECURITY_CODE = ''
+}
 
 // 顶部导航栏
 export const NAV_TABS = [

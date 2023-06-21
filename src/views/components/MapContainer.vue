@@ -6,7 +6,7 @@
 import { mapTypeStore } from '@/store/mapType'
 import { mapIconStore } from '@/store/mapIcon'
 import { defineComponent, onMounted, ref, watch } from 'vue'
-import { GD_MAP_KEY, GD_MAP_SECURITY_CODE } from '@/constant/enums'
+import { GD_MAP_CONFIG } from '@/constant/enums'
 import * as AMapLoader from '@amap/amap-jsapi-loader'
 import { mapMarkerEffect } from '@/hooks/mapMarkerEffect'
 import { mapClickEffect } from '@/hooks/mapClickEffect'
@@ -125,12 +125,12 @@ export default defineComponent({
     watch(
       () => mapType.currentMapType,
       (_val) => {
-        loadMap(GD_MAP_KEY, GD_MAP_SECURITY_CODE)
+        loadMap(GD_MAP_CONFIG.KEY, GD_MAP_CONFIG.SECURITY_CODE)
       }
     )
     
     onMounted(() => {
-      loadMap(GD_MAP_KEY, GD_MAP_SECURITY_CODE)
+      loadMap(GD_MAP_CONFIG.KEY, GD_MAP_CONFIG.SECURITY_CODE)
     })
   }
 })
