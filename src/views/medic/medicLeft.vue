@@ -12,7 +12,7 @@
       :class="['insure-item', item.key]"
     >
       <span class="insure-item-title">{{ item.name }}</span>
-      <span class="insure-item-count ml-auto">{{ item.count }}</span>
+      <span v-count:[item.count]="{ unit: '人'}" class="insure-item-count ml-auto" />
     </div>
 
     <div class="type-chart">
@@ -53,7 +53,6 @@ const sourceChartData = ref([
 
 const getMedicCount = () => {
   apiGetMedicCount().then(res => {
-    console.log(res)
     const resultData = res.data
     total.value = resultData.total
     setInsureData(res.data)
@@ -62,18 +61,21 @@ const getMedicCount = () => {
   })
 }
 
+// 处理医保数据
 const setInsureData = (data: any) => {
   insureData.value.forEach(item => {
     item.count = data[item.key]
   })
 }
 
+// 处理在职/离职饼图数据
 const setTypeChartData = (data: any) => {
   typeChartData.value.forEach(item => {
     item.value = data[item.key]
   })
 }
 
+// 处理老年人/非从业人员/学生饼图数据
 const setSourceChartData = (data: any) => {
   sourceChartData.value.forEach(item => {
     item.value = data[item.key]

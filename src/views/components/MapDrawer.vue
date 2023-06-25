@@ -77,6 +77,7 @@ export default defineComponent({
         const result = await apiGetMarkers(data.url)
         const markerData = result.data.map((item: MarkerItem) => ({
           ...item,
+          icon: data.icon,
           origin: data.type
         }))
         mapMarker.setMarkers(markerData)
@@ -130,16 +131,21 @@ export default defineComponent({
 
       .el-tree {
         position: absolute;
-        top: 20px;
-        padding: 10px;
-        width: calc(100% - 20px);
+        top: 1.25rem /* 20/16 */;
+        padding: .625rem /* 10/16 */;
+        width: calc(100% - 1.25rem /* 20/16 */);
         background: transparent;
         :deep .el-tree-node__expand-icon.is-leaf {
           display: none;
         }
         :deep .el-tree-node__content {
-          padding-left: 10px !important;
+          padding-left: .625rem /* 10/16 */ !important;
+          height: 1.5rem /* 24/16 */;
           background: transparent !important;
+
+          .el-checkbox {
+            height: 1.5rem /* 24/16 */;
+          }
           .el-checkbox__inner {
             background: transparent;
             border-color: #162D4C;

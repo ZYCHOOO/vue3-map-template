@@ -18,11 +18,11 @@ export const mapIconStore = defineStore('mapIcon', () => {
     
       const icon = new AMap.Icon({
         // 图标尺寸
-        size: new AMap.Size(25, 25),
+        size: new AMap.Size(25, 32),
         // 图标地址
         image: `/icons/${iconName}.png`,
         // 图标大小
-        imageSize: new AMap.Size(25, 25)
+        imageSize: new AMap.Size(25, 32)
       })
     
       mapIcons[iconName as keyof typeof mapIcons] = icon

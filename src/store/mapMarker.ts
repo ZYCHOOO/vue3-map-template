@@ -1,5 +1,6 @@
 import { ref } from 'vue'
-import { defineStore } from 'pinia'
+import { mapIconStore } from './mapIcon'
+import { defineStore, storeToRefs } from 'pinia'
 import { markerClickEffect } from '@/hooks/mapClickEffect'
 declare let AMap: any
 
@@ -12,6 +13,9 @@ interface MarkerItem {
   icon?: string
 }
 
+const mapIcon = mapIconStore()
+const { icons } = storeToRefs(mapIcon)
+
 export const mapMarkerStore = defineStore('mapMarker', () => {
 
   const markers = ref([] as any[])
@@ -19,9 +23,11 @@ export const mapMarkerStore = defineStore('mapMarker', () => {
   const setMarkers = (originMarkers: MarkerItem[]) => {
     let markersData = [] as any[]
     originMarkers.forEach((item: MarkerItem) => {
+      // 创建标记点实例
       const marker = new AMap.Marker({
         ...item,
         clickable: true,
+        icon: icons.value[item.icon as keyof typeof icons.value],
         position: new AMap.LngLat(item.longitude, item.latitude)
       })
       marker.on('click', (event: any) => {

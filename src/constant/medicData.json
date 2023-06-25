@@ -1,11 +1,34 @@
 {
-  "total": 13755020,
-  "workers": 8979172,
-  "resident": 2795848,
-  "birth": 6919727,
-  "onJob": 7514220,
-  "retire": 1464952,
-  "old": 665724,
-  "nonEmployed": 769530,
-  "student": 2280766
+  "general": {
+    "total": 13755020,
+    "workers": 8979172,
+    "resident": 2795848,
+    "birth": 6919727,
+    "onJob": 7514220,
+    "retire": 1464952,
+    "old": 665724,
+    "nonEmployed": 769530,
+    "student": 2280766
+  },
+  "trend": [
+    { "time": "2023/06/25", "name": "", "count": 12.5},
+    { "time": "2023/06/26", "name": "", "count": 11.8},
+    { "time": "2023/06/27", "name": "", "count": 11.74},
+    { "time": "2023/06/28", "name": "", "count": 11.73},
+    { "time": "2023/06/29", "name": "", "count": 11.9},
+    { "time": "2023/06/30", "name": "", "count": 11.74},
+    { "time": "2023/07/01", "name": "", "count": 11.72}
+  ],
+  "hospitals": [
+    { "id": 1, "name": "中山大学附属第一医院", "longitude": 113.29, "latitude": 23.13 },
+    { "id": 2, "name": "南方医科大学南方医院", "longitude": 113.33, "latitude": 23.19 },
+    { "id": 3, "name": "广东省人民医院", "longitude": 113.293, "latitude": 23.131 },
+    { "id": 4, "name": "中山大学孙逸仙纪念医院", "longitude": 113.262, "latitude": 23.115 },
+    { "id": 5, "name": "广州医科大学附属第一医院", "longitude": 113.268, "latitude": 23.118 },
+    { "id": 6, "name": "中山大学附属第三医院", "longitude": 113.34, "latitude": 23.13 },
+    { "id": 7, "name": "广东省中医院", "longitude": 113.25, "latitude": 23.11 },
+    { "id": 8, "name": "中山大学附属肿瘤防治院", "longitude": 113.29, "latitude": 23.12 },
+    { "id": 9, "name": "中山大学眼科防治中心", "longitude": 113.299, "latitude": 23.139 },
+    { "id": 10, "name": "广州市妇女儿童医疗中心", "longitude": 113.326, "latitude": 23.13 }
+  ]
 }

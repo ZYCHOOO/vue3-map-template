@@ -1,31 +1,31 @@
 {
   "cultural": [
-    { "id": "", "label": "图书馆", "type": "library", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "文化馆", "type": "cultural", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "博物馆", "type": "museum", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "酒店", "type": "hotel", "url": "", "total": "", "icon": "" }
+    { "id": "", "label": "图书馆", "type": "library", "url": "", "total": "", "icon": "library-icon" },
+    { "id": "", "label": "文化馆", "type": "cultural", "url": "", "total": "", "icon": "cultural-icon" },
+    { "id": "", "label": "博物馆", "type": "museum", "url": "", "total": "", "icon": "museum-icon" },
+    { "id": "", "label": "酒店", "type": "hotel", "url": "", "total": "", "icon": "hotel-icon" }
   ],
   "dashboard": [],
   "education": [
-    { "id": "", "label": "高校", "type": "college", "url": "/college/markers", "total": "", "icon": "" },
-    { "id": "", "label": "高中", "type": "highSchool", "url": "/highSchool/markers", "total": "", "icon": "" },
-    { "id": "", "label": "初中", "type": "middleSchool", "url": "/middleSchool/markers", "total": "", "icon": "" },
-    { "id": "", "label": "小学", "type": "primarySchool", "url": "/primarySchool/markers", "total": "", "icon": "" },
-    { "id": "", "label": "幼儿园", "type": "kinderGarden", "url": "/kinderGarden/markers", "total": "", "icon": "" }
+    { "id": "", "label": "大学", "type": "college", "url": "/college/markers", "total": "", "icon": "college-icon" },
+    { "id": "", "label": "高中", "type": "highSchool", "url": "/highSchool/markers", "total": "", "icon": "highschool-icon" },
+    { "id": "", "label": "初中", "type": "middleSchool", "url": "/middleSchool/markers", "total": "", "icon": "middleschool-icon" },
+    { "id": "", "label": "小学", "type": "primarySchool", "url": "/primarySchool/markers", "total": "", "icon": "primaryschool-icon" },
+    { "id": "", "label": "幼儿园", "type": "kinderGarden", "url": "/kinderGarden/markers", "total": "", "icon": "kindergarden-icon" }
   ],
   "medic": [
-    { "id": "", "label": "定点医疗机构", "type": "hostipal", "url": "/hospital/markers", "total": "", "icon": "" },
-    { "id": "", "label": "定点零售店", "type": "pharmacy", "url": "/pharmacy/markers", "total": "", "icon": "" }
+    { "id": "", "label": "定点医疗机构", "type": "hostipal", "url": "/hospital/markers", "total": "", "icon": "hospital-icon" },
+    { "id": "", "label": "定点零售店", "type": "pharmacy", "url": "/pharmacy/markers", "total": "", "icon": "pharmacy-icon" }
   ],
   "prevention": [
-    { "id": "", "label": "低风险地区", "type": "lowRisk", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "中风险地区", "type": "mediumRisk", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "高风险地区", "type": "highRisk", "url": "", "total": "", "icon": "" }
+    { "id": "", "label": "低风险地区", "type": "lowRisk", "url": "", "total": "", "icon": "lowrisk-icon" },
+    { "id": "", "label": "中风险地区", "type": "mediumRisk", "url": "", "total": "", "icon": "mediumrisk-icon" },
+    { "id": "", "label": "高风险地区", "type": "highRisk", "url": "", "total": "", "icon": "highrisk-icon" }
   ],
   "warning": [
-    { "id": "", "label": "I类预警", "type": "", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "II类预警", "type": "", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "III类预警", "type": "", "url": "", "total": "", "icon": "" },
-    { "id": "", "label": "IV类预警", "type": "", "url": "", "total": "", "icon": "" }
+    { "id": "", "label": "I类预警", "type": "", "url": "", "total": "", "icon": "firstwarning-icon" },
+    { "id": "", "label": "II类预警", "type": "", "url": "", "total": "", "icon": "secondwarning-icon" },
+    { "id": "", "label": "III类预警", "type": "", "url": "", "total": "", "icon": "thirdwarning-icon" },
+    { "id": "", "label": "IV类预警", "type": "", "url": "", "total": "", "icon": "forthwarning-icon" }
   ]
 }

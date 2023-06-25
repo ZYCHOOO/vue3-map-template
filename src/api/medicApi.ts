@@ -8,6 +8,20 @@ export const apiGetMedicCount = () => {
   })
 }
 
+export const apiGetTrend = () => {
+  return request({
+    url: '/medic/trend',
+    method: 'get'
+  })
+}
+
+export const apiGetHospitals = () => {
+  return request({
+    url: '/medic/hospitals',
+    method: 'get'
+  })
+}
+
 // export const apiUpdateMedic = (data) => {
 //   return request({
 //     url: '/medic/update',

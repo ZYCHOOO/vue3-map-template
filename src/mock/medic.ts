@@ -7,7 +7,27 @@ export default [
     response: (_config: any) => {
       return {
         code: 200,
-        data: medic
+        data: medic['general']
+      }
+    }
+  },
+  {
+    url: '/medic/trend',
+    type: 'get',
+    response: (_config: any) => {
+      return {
+        code: 200,
+        data: medic['trend']
+      }
+    }
+  },
+  {
+    url: '/medic/hospitals',
+    type: 'get',
+    response: (_config: any) => {
+      return {
+        code: 200,
+        data: medic['hospitals']
       }
     }
   }
