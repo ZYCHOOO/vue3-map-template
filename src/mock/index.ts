@@ -3,10 +3,12 @@ import { MockParams } from './type'
 import { getEnvValue } from '@/utils/index'
 import map from './map'
 import medic from './medic'
+import cultural from './cultural'
 // import new mock
 const mocks = [
   ...map,
   ...medic,
+  ...cultural,
 // add mock into mocks
 ]
 

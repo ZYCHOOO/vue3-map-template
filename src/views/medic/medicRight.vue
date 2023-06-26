@@ -60,6 +60,7 @@ const chartOption = computed(() => {
     series: [{
       type: 'bar',
       data: trendData.value.map(item => item.count),
+      itemStyle: { color: '#6CFEFF' },
       barWidth: 30
     }]
   }

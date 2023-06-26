@@ -1,8 +1,8 @@
 export enum GD_MAP_CONFIG {
   // 高德地图 key
-  KEY = '',
+  KEY = '49966c5916240c787eb895c046a4cdd5',
   // 高德地图安全密钥
-  SECURITY_CODE = ''
+  SECURITY_CODE = 'a2255544574bd38d7103e43ac150c6c3'
 }
 
 // 顶部导航栏

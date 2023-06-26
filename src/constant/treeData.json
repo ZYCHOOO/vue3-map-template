@@ -1,11 +1,10 @@
 {
   "cultural": [
-    { "id": "", "label": "图书馆", "type": "library", "url": "", "total": "", "icon": "library-icon" },
-    { "id": "", "label": "文化馆", "type": "cultural", "url": "", "total": "", "icon": "cultural-icon" },
-    { "id": "", "label": "博物馆", "type": "museum", "url": "", "total": "", "icon": "museum-icon" },
-    { "id": "", "label": "酒店", "type": "hotel", "url": "", "total": "", "icon": "hotel-icon" }
+    { "id": "", "label": "图书馆", "type": "library", "url": "/library/markers", "total": "", "icon": "library-icon" },
+    { "id": "", "label": "文化馆", "type": "cultural", "url": "/cultural/markers", "total": "", "icon": "cultural-icon" },
+    { "id": "", "label": "博物馆", "type": "museum", "url": "/museum/markers", "total": "", "icon": "museum-icon" },
+    { "id": "", "label": "酒店", "type": "hotel", "url": "/hotel/markers", "total": "", "icon": "hotel-icon" }
   ],
-  "dashboard": [],
   "education": [
     { "id": "", "label": "大学", "type": "college", "url": "/college/markers", "total": "", "icon": "college-icon" },
     { "id": "", "label": "高中", "type": "highSchool", "url": "/highSchool/markers", "total": "", "icon": "highschool-icon" },

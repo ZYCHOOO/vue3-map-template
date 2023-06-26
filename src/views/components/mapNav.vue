@@ -86,7 +86,9 @@ export default defineComponent({
     z-index: 12;
     &--left {
       position: absolute;
+      top: .125rem /* 2/16 */;
       left: .625rem /* 10/16 */;
+      font-family: Din Alternate;
     }
     &--right {
       position: absolute;

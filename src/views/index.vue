@@ -14,7 +14,7 @@
     <!-- 地图抽屉 -->
     <map-drawer />
     <!-- 地图弹窗 -->
-    <MapDialog v-model="dialogVisible" />
+    <!-- <MapDialog v-model="dialogVisible" /> -->
     <router-view />
   </div>
 </template>
@@ -25,7 +25,7 @@ import MapType from './components/MapType.vue'
 import MapDrawer from './components/MapDrawer.vue'
 import MapContainer from './components/MapContainer.vue'
 import { NAV_TABS } from '@/constant/enums'
-import { ref, onMounted, onUnmounted, getCurrentInstance, watch } from 'vue'
+import { ref, onMounted, onUnmounted, getCurrentInstance } from 'vue'
 
 const { proxy } = getCurrentInstance() as any
 
@@ -35,7 +35,7 @@ const navTabs = ref(NAV_TABS)
 
 onMounted(() => {
   timer = setInterval(() => {
-    currentTime.value = proxy.$filters.dateTimeFilter(new Date().getTime(), 'YYYY年MM月DD HH:mm:ss')
+    currentTime.value = proxy.$filters.dateTimeFilter(new Date().getTime(), 'YYYY年MM月DD日 HH:mm:ss')
   }, 1000)
 })
 

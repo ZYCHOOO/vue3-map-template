@@ -10,7 +10,9 @@ export default [
 
       return {
         code: 200,
-        data: trees[type as keyof typeof trees]
+        data: type === 'dashboard'
+          ? [...trees.cultural, ...trees.education, ...trees.medic, ...trees.prevention, ...trees.warning]
+          : trees[type as keyof typeof trees]
       }
     }
   },
@@ -81,6 +83,46 @@ export default [
       return {
         code: 200,
         data: markers['pharmacy']
+      }
+    }
+  },
+  {
+    url: '/library/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['library']
+      }
+    }
+  },
+  {
+    url: '/cultural/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['cultural']
+      }
+    }
+  },
+  {
+    url: '/museum/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['museum']
+      }
+    }
+  },
+  {
+    url: '/hotel/markers',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: markers['hotel']
       }
     }
   }

@@ -1,0 +1,53 @@
+{
+  "library": {
+    "composition": {
+      "children": 976,
+      "teenager": 598,
+      "middleaged": 612,
+      "old": 643
+    },
+    "trend": [
+      { "time": "2023/06/25", "name": "", "count": 12.5},
+      { "time": "2023/06/26", "name": "", "count": 11.8},
+      { "time": "2023/06/27", "name": "", "count": 11.74},
+      { "time": "2023/06/28", "name": "", "count": 11.73},
+      { "time": "2023/06/29", "name": "", "count": 11.9},
+      { "time": "2023/06/30", "name": "", "count": 11.74},
+      { "time": "2023/07/01", "name": "", "count": 11.72}
+    ]
+  },
+  "museum": {
+    "composition": {
+      "children": 725,
+      "teenager": 873,
+      "middleaged": 673,
+      "old": 768
+    },
+    "trend": [
+      { "time": "2023/06/25", "name": "", "count": 11.5},
+      { "time": "2023/06/26", "name": "", "count": 13.8},
+      { "time": "2023/06/27", "name": "", "count": 14.74},
+      { "time": "2023/06/28", "name": "", "count": 15.73},
+      { "time": "2023/06/29", "name": "", "count": 14.9},
+      { "time": "2023/06/30", "name": "", "count": 13.74},
+      { "time": "2023/07/01", "name": "", "count": 12.72}
+    ]
+  },
+  "cultural": {
+    "composition": {
+      "children": 837,
+      "teenager": 779,
+      "middleaged": 689,
+      "old": 864
+    },
+    "trend": [
+      { "time": "2023/06/25", "name": "", "count": 12.5},
+      { "time": "2023/06/26", "name": "", "count": 13.8},
+      { "time": "2023/06/27", "name": "", "count": 13.74},
+      { "time": "2023/06/28", "name": "", "count": 14.73},
+      { "time": "2023/06/29", "name": "", "count": 15.9},
+      { "time": "2023/06/30", "name": "", "count": 16.74},
+      { "time": "2023/07/01", "name": "", "count": 13.72}
+    ]
+  }
+}
