@@ -3,14 +3,16 @@ import MapChart from './MapChart'
 import SvgIcon from './SvgIcon'
 import MapBtn from './MapBtn'
 import MapDialog from './MapDialog'
+import MapTabs from './MapTabs'
 // import new components
 
 const components = [
   MapChart,
   SvgIcon,
   MapBtn,
-  MapDialog
-// add new components
+  MapDialog,
+  MapTabs,
+  // add new components
 ]
 
 export default {
