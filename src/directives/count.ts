@@ -15,10 +15,10 @@ export default function installCountDirective(app: App) {
       let timer:any
       timer = setInterval(() => {
         count = count + step
-        el.innerText = `${count}${unitName}`
+        el.innerHTML = `${count}<span class="unit">${unitName}</span>`
         if (count > resultNum) {
           count = resultNum
-          el.innerText = `${count}${unitName}`
+          el.innerHTML = `${count}<span class="unit">${unitName}</span>`
           // 清空定时器
           clearInterval(timer)
           timer = null

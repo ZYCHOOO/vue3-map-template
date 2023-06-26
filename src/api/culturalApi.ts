@@ -16,3 +16,17 @@ export const apiGetCulturalTrend = (type: string) => {
     params: { type }
   })
 }
+
+export const apiGetHotelCount = () => {
+  return request({
+    url: '/hotel/count',
+    method: 'get'
+  })
+}
+
+export const apiGetHotelTrend = () => {
+  return request({
+    url: '/hotel/trend',
+    method: 'get'
+  })
+}
