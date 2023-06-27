@@ -6,11 +6,11 @@ export enum MAP_ICONS {
   COLLEGE_ICON = 'college-icon',
   HIGHSCHOOL_ICON = 'highschool-icon',
   MIDDLESCHOOL_ICON = 'middleschool-icon',
-  PRIMARYSCHOOL_ICON = 'primaryschool-icon',
+  PRIMARYSCHOOL_ICON = 'primarySchool-icon',
   KINDERGARDEN_ICON = 'kindergarden-icon',
   HOSPITAL_ICON = 'hospital-icon',
   PHARMACY_ICON = 'pharmacy-icon',
-  LOWRISK_ICON = 'lowrisk-icon',
-  MEDIUMRISK_ICON = 'mediumrisk-icon',
-  HIGHRISK_ICON = 'highrisk-icon'
+  LOWRISK_ICON = 'lowRisk-icon',
+  MEDIUMRISK_ICON = 'mediumRisk-icon',
+  HIGHRISK_ICON = 'highRisk-icon'
 }

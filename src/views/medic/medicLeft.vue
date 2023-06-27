@@ -157,6 +157,11 @@ getMedicCount()
       padding: 0 1.125rem /* 18/16 */;
       height: 2.5rem /* 40/16 */;
       background: linear-gradient(90deg, rgba(79,158,253,0.3) 0%, rgba(79,158,253,0.04) 100%);
+      span {
+        font-size: 1.375rem /* 22/16 */;
+        font-family: Din Alternate;
+        color: $defaultTextColor;
+      }
     }
     .insure-item {
       @include flex-row;

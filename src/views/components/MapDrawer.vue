@@ -44,6 +44,7 @@ export default defineComponent({
     const treeData = ref()
     const treeProps = ref()
     const openFlag = ref(false)
+    const mapMarker = mapMarkerStore()
 
     const showMapDrawer = (e:Event) => {
       console.log(e)
@@ -54,6 +55,7 @@ export default defineComponent({
       () => route.path,
       (val: string) => {
         getTreeData(val.replace('/', ''))
+        mapMarker.clearMarkers()
       }
     )
     
@@ -72,12 +74,11 @@ export default defineComponent({
     }
 
     const checkChange = async (data: Tree, checked: boolean) => {
-      const mapMarker = mapMarkerStore()
       if (checked) {
         const result = await apiGetMarkers(data.url)
         const markerData = result.data.map((item: MarkerItem) => ({
           ...item,
-          icon: data.icon,
+          icon: `${data.icon}-icon`,
           origin: data.type
         }))
         mapMarker.setMarkers(markerData)
@@ -144,16 +145,31 @@ export default defineComponent({
           background: transparent !important;
 
           .el-checkbox {
-            height: 1.5rem /* 24/16 */;
+            margin-right: .375rem /* 6/16 */;
+            width: 1.125rem /* 18/16 */;
+            height: 1.125rem /* 18/16 */;
           }
           .el-checkbox__inner {
+            width: 1.125rem /* 18/16 */;
+            height: 1.125rem /* 18/16 */;
+            border-radius: .125rem /* 2/16 */;
             background: transparent;
-            border-color: #162D4C;
+            border-color: #4F9EFD;
+            border-width: .125rem /* 2/16 */;
+            transition: border-color .25s cubic-bezier(.71,-.46,.29,1.46),background-color .1s cubic-bezier(.71,-.46,.29,1.46),outline .1s cubic-bezier(.71,-.46,.29,1.46);
+            &::after {
+              transition: none;
+            }
           }
           .el-checkbox__input.is-checked {
             .el-checkbox__inner {
               background: #4F9EFD;
-              border-color: #162D4C;
+              &::after {
+                left: .25rem /* 4/16 */;
+                height: .625rem /* 10/16 */;
+                width: .375rem /* 6/16 */;
+                border-width: .125rem /* 2/16 */;
+              }
             }
           }
           &:hover {
@@ -161,7 +177,17 @@ export default defineComponent({
           }
         }
         :deep .custom-tree-node {
-          span { color: #FFF }
+          @include flex-align-center;
+          .svg-icon {
+            margin-right: .375rem /* 6/16 */;
+            width: 1rem /* 16/16 */;
+            height: 1rem /* 16/16 */;
+          }
+          span {
+            font-size: .875rem /* 14/16 */;
+            font-weight: bold;
+            color: $defaultTitleColor;
+          }
         }
       }
     }
