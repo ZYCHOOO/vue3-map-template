@@ -1,4 +1,5 @@
 import { App, Directive } from 'vue'
+import { thousandsFormat } from '@/utils/index'
 
 export default function installCountDirective(app: App) {
   const countDirective:Directive = {
@@ -15,10 +16,10 @@ export default function installCountDirective(app: App) {
       let timer:any
       timer = setInterval(() => {
         count = count + step
-        el.innerHTML = `${count}<span class="v-count-unit">${unitName}</span>`
+        el.innerHTML = `${thousandsFormat(count)}<span class="v-count-unit">${unitName}</span>`
         if (count > resultNum) {
           count = resultNum
-          el.innerHTML = `${count}<span class="v-count-unit">${unitName}</span>`
+          el.innerHTML = `${thousandsFormat(count)}<span class="v-count-unit">${unitName}</span>`
           // 清空定时器
           clearInterval(timer)
           timer = null
