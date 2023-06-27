@@ -4,6 +4,7 @@ import SvgIcon from './SvgIcon'
 import MapBtn from './MapBtn'
 import MapDialog from './MapDialog'
 import MapTabs from './MapTabs'
+import RankColumn from './RankColumn'
 // import new components
 
 const components = [
@@ -12,7 +13,8 @@ const components = [
   MapBtn,
   MapDialog,
   MapTabs,
-  // add new components
+  RankColumn,
+// add new components
 ]
 
 export default {

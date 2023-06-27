@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     MapDialog: typeof import('./src/components/MapDialog/index.vue')['default']
     MapTable: typeof import('./src/components/MapTable/index.vue')['default']
     MapTabs: typeof import('./src/components/MapTabs/index.vue')['default']
+    RankColumn: typeof import('./src/components/RankColumn/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./src/components/SvgIcon/index.vue')['default']
