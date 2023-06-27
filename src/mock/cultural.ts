@@ -25,6 +25,17 @@ export default [
     }
   },
   {
+    url: '/cultural/statistics',
+    type: 'get',
+    response: (config: any) => {
+      const statisticsKey = getQueryString(config.query, "type")
+      return {
+        code: 200,
+        data: cultural[statisticsKey as keyof typeof cultural].statistics
+      }
+    }
+  },
+  {
     url: '/hotel/count',
     type: 'get',
     response: () => {
@@ -41,6 +52,16 @@ export default [
       return {
         code: 200,
         data: cultural.hotel.trend
+      }
+    }
+  },
+  {
+    url: '/hotel/rank',
+    type: 'get',
+    response: () => {
+      return {
+        code: 200,
+        data: cultural.hotel.rank
       }
     }
   }

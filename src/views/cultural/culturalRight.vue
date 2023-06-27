@@ -18,17 +18,27 @@
         :chart-option="chartOption"
       />
     </div>
+
+    <span class="module-title">TOP10酒店排行</span>
+    <rank-column :rank-data="hotelData" max-height="16.2rem" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { apiGetHotelCount, apiGetHotelTrend } from '@/api/culturalApi'
+import { apiGetHotelCount, apiGetHotelTrend, apiGetHotelRank } from '@/api/culturalApi'
 
 interface TrendItem {
   time: string,
   name: string,
   count: number
+}
+
+interface HotelItem {
+  id: number,
+  name: string,
+  longitude: number,
+  latitude: number
 }
 
 const countData = ref([
@@ -37,6 +47,7 @@ const countData = ref([
   { id: 3, name: '星级酒店平均房价', count: 0, unitName: '元', key: 'average' }
 ])
 const trendData = ref([] as TrendItem[])
+const hotelData = ref([] as HotelItem[])
 
 const getCountData = async() => {
   const { data } = await apiGetHotelCount()
@@ -48,6 +59,11 @@ const getCountData = async() => {
 const getTrendData = async() => {
   const { data } = await apiGetHotelTrend()
   trendData.value = data
+}
+
+const getHotelRank = async() => {
+  const { data } = await apiGetHotelRank()
+  hotelData.value = data
 }
 
 const chartOption = computed(() => {
@@ -77,6 +93,7 @@ const chartOption = computed(() => {
 
 getCountData()
 getTrendData()
+getHotelRank()
 
 </script>
 
