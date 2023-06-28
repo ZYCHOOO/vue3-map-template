@@ -16,8 +16,7 @@
                 @icon-click="closeDialog"
               />
               <div class="map-dialog-content">
-                <!-- <component :is="currentComponent" /> -->
-                {{ demoContent }}
+                <component :is="currentComponent" />
               </div>
             </border-box11>
           </div>
@@ -31,7 +30,7 @@
 import { storeToRefs } from 'pinia'
 import { BorderBox11 } from '@kjgl77/datav-vue3'
 import { mapDialogStore } from '@/store/mapDialog'
-import { defineComponent, computed, toRefs } from 'vue'
+import { defineComponent, computed, toRefs, defineAsyncComponent } from 'vue'
 
 export default defineComponent({
   name: 'MapDialog',
@@ -44,9 +43,8 @@ export default defineComponent({
     const mapDialog = mapDialogStore()
     const { dialogInfo } = storeToRefs(mapDialog)
 
-    console.log(dialogInfo)
-
-    const { title, style, demoContent } = toRefs(dialogInfo.value)
+    
+    const { title, style, componentName } = toRefs(dialogInfo.value)
 
     const dialogClassName = computed(() => {
       // return style!.className
@@ -56,9 +54,8 @@ export default defineComponent({
     })
 
     const currentComponent = computed(() => {
-      // const modules = import.meta.glob(['../DialogContent/*.vue'])
-      // return () => import(/* @vite-ignore */ '../DialogContent/' + componentName + '.vue')
-      // return modules[`../DialogContent/${componentName}.vue`]
+      const component = componentName.value
+      return defineAsyncComponent(() => import(/* @vite-ignore */`../DialogContent/${component}.vue`))
     })
 
     const closeDialog = () => {
@@ -68,7 +65,6 @@ export default defineComponent({
     return {
       title,
       style,
-      demoContent,
       dialogClassName,
       currentComponent,
       closeDialog
@@ -81,8 +77,8 @@ export default defineComponent({
 <style lang="scss" scoped>
   .map-dialog {
     margin: 15vh auto;
-    width: 500px;
-    height: 300px;
+    width: 31.25rem /* 500/16 */ !important;
+    height: 18.75rem /* 300/16 */ !important;
     background: $defaultBgColor;
     color: #FFF;
     &-overlay {
@@ -105,13 +101,13 @@ export default defineComponent({
       overflow: auto;
     }
     &-content {
-      padding: 60px 20px 0;
+      padding: 3.75rem /* 60/16 */ 1.25rem /* 20/16 */ 0;
       height: calc(100% - 70px);
     }
     :deep .svg-icon.close-icon {
       position: absolute;
-      right: 8px;
-      top: 8px;
+      right: .5rem /* 8/16 */;
+      top: .5rem /* 8/16 */;
       color: #FFF;
     }
   }
