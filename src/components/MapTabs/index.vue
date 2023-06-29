@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, onMounted, onUnmounted } from 'vue'
+import { ref, defineComponent, PropType, onMounted, onUnmounted } from 'vue'
 
 interface OptionItem {
   value: string,
@@ -29,7 +29,7 @@ export default defineComponent({
     options: { type: Array as PropType<OptionItem[]>, required: true }
   },
   setup(props, { emit }) {
-    let num = 1
+    let num = ref(1)
     let timer:NodeJS.Timer | null = null
 
     onMounted(() => {
@@ -47,12 +47,20 @@ export default defineComponent({
     })
 
     const toggleTab = (tabValue: string) => {
+      // 重新开始计时
+      if (timer) { clearInterval(Number(timer)) }
+      num.value = props.options.findIndex(item  => item.value === tabValue)
       emit('update:modelValue', tabValue)
+      if (props.autoplay) {
+        timer = setInterval(() => {
+          gradualSetTab()
+        }, props.duration)
+      }
     }
 
     const gradualSetTab = () => {
-      num++
-      const index = ( num % props.options.length)
+      num.value++
+      const index = ( num.value % props.options.length)
       emit('update:modelValue', props.options[index].value)
     }
 
