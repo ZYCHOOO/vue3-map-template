@@ -19,8 +19,8 @@
         <div
           v-for="tab in leftTabs"
           :key="tab.id"
-          class="map-nav-tab-item touchable"
           v-html="tab.label"
+          :class="['map-nav-tab-item', 'touchable', route.path === tab.path ? 'active' : '']"
           @click="tabClick(tab.path!)"
         />
       </div>
@@ -28,8 +28,8 @@
         <div
           v-for="tab in rightTabs"
           :key="tab.id"
-          class="map-nav-tab-item touchable"
           v-html="tab.label"
+          :class="['map-nav-tab-item', 'touchable', route.path === tab.path ? 'active' : '']"
           @click="tabClick(tab.path!)"
         />
       </div>
@@ -39,7 +39,7 @@
 
 <script lang="ts">
 import { NavItem } from './type'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { computed, defineComponent, PropType } from 'vue'
 
 export default defineComponent({
@@ -50,7 +50,10 @@ export default defineComponent({
     tabs: { type: Array as PropType<NavItem[]>, required: true }
   },
   setup(props) {
+    const route = useRoute()
     const router = useRouter()
+
+    console.log(route)
     const leftTabs = computed<NavItem[]>(() => {
       return props.tabs.filter((_item , i) => i < props.tabs.length / 2)
     })
@@ -64,6 +67,7 @@ export default defineComponent({
     }
 
     return {
+      route,
       leftTabs,
       rightTabs,
       tabClick
@@ -127,10 +131,17 @@ export default defineComponent({
     }
     &-item {
       @include flex-center;
-      padding: .125rem .5rem /* 2/16 */ /* 8/16 */;
-      border-radius: .5rem /* 8/16 */;
+      width: 7.5rem /* 120/16 */;
+      padding: .125rem 0;
+      border-radius: .125rem /* 2/16 */;
       border: 1px solid #6CFEFF;
+      background: rgba(7,21,44,0.35);
+      box-shadow: 0px 0px 2px rgba(108,254,255,0.5);
       height: 2rem /* 32/16 */;
+      font-weight: bold;
+      &.active {
+        background: linear-gradient(90deg, rgba(41,107,196,0) 0%, rgba(41,107,196,0.5) 23%, #4E9DFD 50%, rgba(41,107,196,0.5) 77%, rgba(41,107,196,0) 100%);
+      }
     }
   }
 </style>
