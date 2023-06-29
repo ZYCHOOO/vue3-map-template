@@ -80,7 +80,6 @@ const setSourceChartData = (data: any) => {
   sourceChartData.value.forEach(item => {
     item.value = data[item.key]
   })
-  console.log(sourceChartData.value)
 }
 
 const typeChartOption = computed(() => {

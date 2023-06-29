@@ -4,11 +4,13 @@ import { getEnvValue } from '@/utils/index'
 import map from './map'
 import medic from './medic'
 import cultural from './cultural'
+import prevention from './prevention'
 // import new mock
 const mocks = [
   ...map,
   ...medic,
   ...cultural,
+  ...prevention,
 // add mock into mocks
 ]
 

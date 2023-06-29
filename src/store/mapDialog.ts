@@ -2,11 +2,10 @@ import { ref, reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 interface DialogInfo {
-  longitude: number,
-  latitude: number,
+  longitude?: number,
+  latitude?: number,
   title: string,
   componentName: string,
-  demoContent: string,
   style: {
     className?: string,
     titleWidth: number,
@@ -21,7 +20,6 @@ export const mapDialogStore = defineStore('mapDialog', () => {
     longitude: 0,
     latitude: 0,
     title: '',
-    demoContent: '',
     componentName: '',
     style: {
       titleWidth: 250,

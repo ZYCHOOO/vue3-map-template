@@ -21,11 +21,3 @@ export const apiGetHospitals = () => {
     method: 'get'
   })
 }
-
-// export const apiUpdateMedic = (data) => {
-//   return request({
-//     url: '/medic/update',
-//     method: 'post',
-//     data
-//   })
-// }
