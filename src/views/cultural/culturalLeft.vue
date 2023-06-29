@@ -43,7 +43,10 @@ interface TrendItem {
 
 const currentTab = ref('library')
 const trendData = ref([] as TrendItem[])
-const statistics = ref({})
+const statistics = ref({
+  lastYear: 0,
+  nowYear: 0
+})
 const options = ref([
   { value: 'library', label: '图书馆' },
   { value: 'cultural', label: '文化馆' },
