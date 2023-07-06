@@ -44,5 +44,27 @@
       "male": 49,
       "female": 3
     }
-  }
+  },
+  "risk": [
+    { "name": "低风险地区", "count": 343 },
+    { "name": "中风险地区", "count": 367 },
+    { "name": "高风险地区", "count": 175 }
+  ],
+  "cure": [
+    { "name": "已入院", "count": 538 },
+    { "name": "已出院", "count": 462 }
+  ],
+  "ratio": {
+    "corona": 1033,
+    "noro": 1500,
+    "mpox": 52
+  },
+  "trend": [
+    { "time": "2023/01", "lowRisk": 23, "mediumRisk": 10, "highRisk": 2 },
+    { "time": "2023/02", "lowRisk": 18, "mediumRisk": 8, "highRisk": 1 },
+    { "time": "2023/03", "lowRisk": 13, "mediumRisk": 5, "highRisk": 0 },
+    { "time": "2023/04", "lowRisk": 8, "mediumRisk": 3, "highRisk": 0 },
+    { "time": "2023/05", "lowRisk": 5, "mediumRisk": 0, "highRisk": 0 },
+    { "time": "2023/06", "lowRisk": 2, "mediumRisk": 0, "highRisk": 0 }
+  ]
 }

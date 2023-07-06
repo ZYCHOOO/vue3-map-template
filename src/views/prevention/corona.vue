@@ -5,7 +5,7 @@
       :key="item.year"
       class="corona-item">
       {{ item.year }}感染者
-      <span v-count:[item.count]="{ unit: '例' }" class="ml-auto" />
+      <span v-count="{ count: item.count, unit: '例' }" class="ml-auto" />
     </div>
 
     <div class="corona-box">
@@ -13,7 +13,7 @@
         v-for="item in coronaData"
         :key="item.name"
         class="corona-box-item">
-        <span v-count:[item.count]="{ unit: '例' }" class="count" />
+        <span v-count="{ count: item.count, unit: '例' }" class="count" />
         <span v-html="item.name" class="title" />
       </div>
     </div>

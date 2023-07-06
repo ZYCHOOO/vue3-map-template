@@ -10,7 +10,7 @@
         v-for="item in noroData"
         :key="item.name"
         class="noro-box-item">
-        <span v-count:[item.count]="{ unit: '例' }" class="count" />
+        <span v-count="{ count: item.count, unit: '例' }" class="count" />
         <span v-html="item.name" class="title" />
       </div>
     </div>

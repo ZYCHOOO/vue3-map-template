@@ -5,12 +5,12 @@
     <div class="cultural-statistics">
       <img src="@/assets/images/cultural-icon.png" alt="">
       <span>2022年{{ currentLabel }}数量</span>
-      <span v-count:[statistics.lastYear]="{ unit: '家' }" class="ml-auto" />
+      <span v-count="{ count: statistics.lastYear, unit: '家' }" class="ml-auto" />
     </div>
     <div class="cultural-statistics">
       <img src="@/assets/images/cultural-icon.png" alt="">
       <span>2023年{{ currentLabel }}数量</span>
-      <span v-count:[statistics.nowYear]="{ unit: '家' }" class="ml-auto" />
+      <span v-count="{ count: statistics.nowYear, unit: '家' }" class="ml-auto" />
     </div>
 
     <span class="module-title">{{ currentLabel }}参观者年龄分布</span>
@@ -83,6 +83,7 @@ const trendOption = computed(() => {
     tooltip: { show: true },
     xAxis: {
       type: 'category',
+      boundaryGap: false,
       data: trendData.value.map(item => item.time)
     },
     yAxis: {

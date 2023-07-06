@@ -70,5 +70,45 @@ export default [
         data: prevention.mpox.ratio
       }
     }
+  },
+  {
+    url: '/risk/count',
+    type: 'get',
+    response: (_config: any) => {
+      return {
+        code: 200,
+        data: prevention.risk
+      }
+    }
+  },
+  {
+    url: '/cure/count',
+    type: 'get',
+    response: (_config: any) => {
+      return {
+        code: 200,
+        data: prevention.cure
+      }
+    }
+  },
+  {
+    url: '/infection/ratio',
+    type: 'get',
+    response: (_config: any) => {
+      return {
+        code: 200,
+        data: prevention.ratio
+      }
+    }
+  },
+  {
+    url: '/infection/trend',
+    type: 'get',
+    response: (_config: any) => {
+      return {
+        code: 200,
+        data: prevention.trend
+      }
+    }
   }
 ]

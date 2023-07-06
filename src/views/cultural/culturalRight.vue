@@ -6,7 +6,7 @@
         :key="item.id"
         class="hotel-box-item"
       >
-        <span v-count:[item.count]="{ unit: item.unitName }" class="hotel-count"></span>
+        <span v-count="{ count: item.count, unit: item.unitName }" class="hotel-count"></span>
         <span class="hotel-name">{{ item.name }}</span>
       </div>
     </div>

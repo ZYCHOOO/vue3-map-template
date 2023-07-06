@@ -1,12 +1,12 @@
 <template>
   <border-box12 class="module--left">
-    <map-tabs v-model="currentTab" :options="options" autoplay :duration="8000" />
+    <map-tabs v-model="currentTab" :options="options" :duration="8000" autoplay />
     <corona v-if="currentTab === 'corona'" />
     <mpox v-if="currentTab === 'mpox'" />
     <noro v-if="currentTab === 'noro'" />
   </border-box12>
   <border-box12 class="module--right">
-    prevention right
+    <prevention-right />
   </border-box12>
 </template>
 
@@ -15,6 +15,7 @@ import { ref} from 'vue'
 import Corona from './corona.vue'
 import Mpox from './mpox.vue'
 import Noro from './noro.vue'
+import PreventionRight from './preventionRight.vue'
 import { BorderBox12 } from '@kjgl77/datav-vue3'
 
 const currentTab = ref('corona')

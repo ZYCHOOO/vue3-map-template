@@ -8,7 +8,7 @@
     <div class="mpox-data">
       <img src="@/assets/images/virus-icon.png" alt="">
       猴痘患者数量
-      <span v-count:[mpoxCount]="{ unit: '人' }" class="ml-auto" />
+      <span v-count="{ count: mpoxCount, unit: '人' }" class="ml-auto" />
     </div>
 
     <span class="module-title">猴痘患病性别比例</span>

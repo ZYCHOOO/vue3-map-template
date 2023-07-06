@@ -2,7 +2,7 @@
   <div class="medic-left">
     <div class="medic-left-title">
       总参保人数：
-      <span v-count:[total]="{ unit: '人' }" />
+      <span v-count="{ count: total, unit: '人' }" />
     </div>
 
     <div
@@ -12,7 +12,7 @@
       :class="['insure-item', item.key]"
     >
       <span class="insure-item-title">{{ item.name }}</span>
-      <span v-count:[item.count]="{ unit: '人'}" class="insure-item-count ml-auto" />
+      <span v-count="{ count: item.count, unit: '人'}" class="insure-item-count ml-auto" />
     </div>
 
     <div class="type-chart">
