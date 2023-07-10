@@ -1,0 +1,59 @@
+{
+  "general": {
+    "kinderGarden": 2155,
+    "primarySchool": 992,
+    "middleSchool": 380,
+    "highSchool": 128,
+    "college": 83
+  },
+  "kinderGarden": {
+    "count": 633200,
+    "config": {},
+    "rank": [],
+    "trend": [
+      { "time": "2021", "name": "", "count": 42.75},
+      { "time": "2022", "name": "", "count": 54.06},
+      { "time": "2023", "name": "", "count": 63.32}
+    ]
+  },
+  "primarySchool": {
+    "count": 316700,
+    "config": {},
+    "rank": [],
+    "trend": [
+      { "time": "2021", "name": "", "count": 19.37},
+      { "time": "2022", "name": "", "count": 21.20},
+      { "time": "2023", "name": "", "count": 31.67}
+    ]
+  },
+  "middleSchool": {
+    "count": 131500,
+    "config": {},
+    "rank": [],
+    "trend": [
+      { "time": "2021", "name": "", "count": 14.52},
+      { "time": "2022", "name": "", "count": 13.86},
+      { "time": "2023", "name": "", "count": 13.15}
+    ]
+  },
+  "highSchool": {
+    "count": 170300,
+    "config": {},
+    "rank": [],
+    "trend": [
+      { "time": "2021", "name": "", "count": 16.16},
+      { "time": "2022", "name": "", "count": 16.73},
+      { "time": "2023", "name": "", "count": 17.03}
+    ]
+  },
+  "college": {
+    "count": 149300,
+    "config": {},
+    "rank": [],
+    "trend": [
+      { "time": "2021", "name": "", "count": 14.19},
+      { "time": "2022", "name": "", "count": 14.64},
+      { "time": "2023", "name": "", "count": 14.93}
+    ]
+  }
+}

@@ -5,12 +5,14 @@ import map from './map'
 import medic from './medic'
 import cultural from './cultural'
 import prevention from './prevention'
+import education from './education'
 // import new mock
 const mocks = [
   ...map,
   ...medic,
   ...cultural,
   ...prevention,
+  ...education,
 // add mock into mocks
 ]
 

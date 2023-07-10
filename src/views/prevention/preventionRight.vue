@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <span class="module-title">风险疾病比例</span>
+    <span class="module-title">风险地区疾病占比</span>
     <div class="ratio-chart">
       <map-chart
         :chart-style="{ height: '12rem' }"

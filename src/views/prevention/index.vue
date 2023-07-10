@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref} from 'vue'
+import { ref } from 'vue'
 import Corona from './corona.vue'
 import Mpox from './mpox.vue'
 import Noro from './noro.vue'
