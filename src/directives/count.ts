@@ -6,7 +6,8 @@ export default function installCountDirective(app: App) {
     updated(el, binding) {
       const { oldValue, value } = binding
       if (oldValue.count === value.count) return
-      const { count: resultNum, unit: unitName } = value
+      const { count: resultNum, unit } = value
+      const unitName = unit || ''
       // 动画间隔
       const duration = 30
       // 步长 数据增加间隔

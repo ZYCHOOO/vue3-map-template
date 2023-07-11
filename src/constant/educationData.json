@@ -8,8 +8,15 @@
   },
   "kinderGarden": {
     "count": 633200,
-    "config": {},
-    "rank": [],
+    "config": {
+      "keyTeacher": 10672,
+      "peTeacher": 8237,
+      "area": 7483,
+      "instrument": 3842
+    },
+    "rank": [
+      { "id": 1, "longitude": 113.24, "latitude": 23.11, "name": "多宝幼儿园" }
+    ],
     "trend": [
       { "time": "2021", "name": "", "count": 42.75},
       { "time": "2022", "name": "", "count": 54.06},
@@ -18,8 +25,17 @@
   },
   "primarySchool": {
     "count": 316700,
-    "config": {},
-    "rank": [],
+    "config": {
+      "keyTeacher": 278439,
+      "peTeacher": 123922,
+      "area": 80394,
+      "instrument": 12829
+    },
+    "rank": [
+      { "id": 1, "longitude": 113.24, "latitude": 23.12, "name": "西关培正小学" },
+      { "id": 2, "longitude": 113.23, "latitude": 23.1, "name": "康有为纪念小学" },
+      { "id": 3, "longitude": 113.25, "latitude": 23.11, "name": "沙面小学" }
+    ],
     "trend": [
       { "time": "2021", "name": "", "count": 19.37},
       { "time": "2022", "name": "", "count": 21.20},
@@ -28,8 +44,16 @@
   },
   "middleSchool": {
     "count": 131500,
-    "config": {},
-    "rank": [],
+    "config": {
+      "keyTeacher": 127943,
+      "peTeacher": 92383,
+      "area": 80394,
+      "instrument": 12829
+    },
+    "rank": [
+      { "id": 1, "longitude": 113.24, "latitude": 23.14, "name": "广雅中学" },
+      { "id": 2, "longitude": 113.24, "latitude": 23.15, "name": "真光中学" }
+    ],
     "trend": [
       { "time": "2021", "name": "", "count": 14.52},
       { "time": "2022", "name": "", "count": 13.86},
@@ -38,8 +62,19 @@
   },
   "highSchool": {
     "count": 170300,
-    "config": {},
-    "rank": [],
+    "config": {
+      "keyTeacher": 162980,
+      "peTeacher": 96382,
+      "area": 8273,
+      "instrument": 9528
+    },
+    "rank": [
+      { "id": 1, "longitude": 113.34, "latitude": 23.13, "name": "华师附中" },
+      { "id": 2, "longitude": 113.24, "latitude": 23.14, "name": "广雅中学" },
+      { "id": 3, "longitude": 113.29, "latitude": 23.13, "name": "执信中学" },
+      { "id": 4, "longitude": 113.23, "latitude": 23.08, "name": "省实中学" },
+      { "id": 5, "longitude": 113.26, "latitude": 23.14, "name": "二中应元" }
+    ],
     "trend": [
       { "time": "2021", "name": "", "count": 16.16},
       { "time": "2022", "name": "", "count": 16.73},
@@ -48,8 +83,19 @@
   },
   "college": {
     "count": 149300,
-    "config": {},
-    "rank": [],
+    "config": {
+      "keyTeacher": 168439,
+      "peTeacher": 97254,
+      "area": 8039,
+      "instrument": 9348
+    },
+    "rank": [
+      { "id": 1, "longitude": 113.3, "latitude": 23.1, "name": "中山大学" },
+      { "id": 2, "longitude": 113.34, "latitude": 23.13, "name": "暨南大学" },
+      { "id": 3, "longitude": 113.4, "latitude": 23.05, "name": "华南理工大学" },
+      { "id": 4, "longitude": 113.35, "latitude": 23.15, "name": "华南农业大学" },
+      { "id": 5, "longitude": 113.4, "latitude": 23, "name": "广东工业大学" }
+    ],
     "trend": [
       { "time": "2021", "name": "", "count": 14.19},
       { "time": "2022", "name": "", "count": 14.64},

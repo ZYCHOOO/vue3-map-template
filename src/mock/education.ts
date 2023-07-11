@@ -25,7 +25,7 @@ export default [
   },
   {
     url: '/education/config',
-    type: 'post',
+    type: 'get',
     response: (config: any) => {
       const key = getQueryString(config.query, 'type')
       return {
